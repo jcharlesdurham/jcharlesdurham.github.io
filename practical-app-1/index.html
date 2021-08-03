@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Slider</title>
+        <link rel="stylesheet" href="css/styles.css">
+        <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+        
+    </head>
+    <body>
+        <main>
+           <header class="main-heading">
+                <h1>apparel</h1>
+            </header>
+            <header class="nav-bar">
+                <img class="menu-icon" src="images/icons/bars-solid.svg" alt="">
+                <form class="searchbox">
+                    <input class="searchbox-input" type="search" name="" aria-label="search bar">
+                    <button class="search-btn">
+                        <img src="images/icons/search-solid.svg" alt="search icon">
+                    </button>
+                </form>
+                <img class="cart-icon" src="images/icons/shopping-cart-solid.svg" alt="">
+            </header>
+            <section class="swiper-container">
+                <div class="swiper-wrapper">
+                    <figure class="swiper-slide">
+                      <a href="#" onclick="document.getElementById('product').style.display='block'">
+                      <img src="images/content/small/autri-taheri-T8D61CHS7so-unsplash.jpg" alt="">
+                        </a>
+                      <figcaption>
+                          <h2><a href="#" onclick="document.getElementById('product').style.display='block'">Bowie</a></h2>
+                          <p>$23</p>
+                      </figcaption>
+                    </figure>
+                    <figure class="swiper-slide">
+                      <img src="images/content/small/david-hurley-_qweS4DrtQM-unsplash.jpg" alt="">
+                      <figcaption>
+                          <h2>Pop</h2>
+                          <p>$23</p>
+                      </figcaption>
+                    </figure>
+                    <figure class="swiper-slide">
+                      <img src="images/content/small/ian-dooley-wzRKn-AjKf4-unsplash.jpg" alt="">
+                      <figcaption>
+                          <h2>Peace</h2>
+                          <p>$23</p>
+                      </figcaption>
+                    </figure>
+                    <figure class="swiper-slide">
+                      <img src="images/content/small/christian-bolt-VW5VjskNXZ8-unsplash.jpg" alt="">
+                      <figcaption>
+                          <h2>Trails</h2>
+                          <p>$19</p>
+                      </figcaption>
+                    </figure>
+                    <figure class="swiper-slide">
+                      <img src="images/content/small/josue-escoto-bAd5gtsOC7c-unsplash.jpg" alt="">
+                      <figcaption>
+                          <h2>Snake</h2>
+                          <p>$19</p>
+                      </figcaption>
+                    </figure>
+                </div>
+                <!-- Add Pagination -->
+                <div class="swiper-pagination"></div>
+            </section>
+        </main>
+        <aside id="product" class="product-card">
+            <figure class="product-content animate">
+                    <img class="product-img" src="images/content/cropped/autri-taheri-T8D61CHS7so-unsplash-cropped.jpg" alt="">
+                    <span onclick="document.getElementById('product').style.display='none'" class="close" title="Close Modal">&times;</span>
+                    <figcaption class="product-card-details">
+                        <h2>Bowie</h2>
+                        <p>
+                        IPhone four dollar toast godard food truck. Umami roof party pok pok, photo booth jean shorts next level biodiesel lomo squid selfies. 
+                        </p>
+                        <form class="buy">
+                            <fieldset class="size-range">
+                                <span class="sizes" for="size-xs">
+                                    <input type="radio" id="size-xs" name="size-xs" value="xs">
+                                    <label for="size-xs">xs</label>
+                                </span>  
+                                <span class="sizes" for="size-s">
+                                    <input type="radio" id="size-s" name="size-s" value="s">
+                                    <label for="size-s">s</label>
+                                </span>
+                                <span class="sizes" for="size-m">
+                                    <input type="radio" id="size-m" name="size-m" value="m">
+                                    <label for="size-m">m</label>
+                                </span>  
+                                <span class="sizes" for="size-l">
+                                    <input type="radio" id="size-l" name="size-l" value="l">
+                                    <label for="size-l">l</label>
+                                </span>
+                                <span class="sizes" for="size-xl">
+                                    <input type="radio" id="size-xl" name="size-xl" value="xl">
+                                    <label for="size-xl">xl</label>
+                                </span>               
+                            </fieldset>
+                            <label class="price">$23</label>
+                            <button class="button" type="button">
+                                Add to cart
+                            </button>
+                        </form>
+                   </figcaption>
+                </figure>
+        </aside>
+        <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+        <script>
+            var swiper = new Swiper('.swiper-container', {
+              slidesPerView: '2',
+              spaceBetween: 50,
+              centeredSlides: true,
+              loop: true,
+              mousewheel: true,
+              pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+                dynamicBullets: true   
+              }
+            });
+        </script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $(".button").click(function(){
+                    $(this).addClass("active");
+                    
+                    // Add Success Class After 3 Seconds
+                    setTimeout(function(){
+                        $(".button").addClass("success")
+                    }, 3000);
+                    
+                    // Remove Classes After 6 Seconds
+                    setTimeout(function(){
+                        $(".button").removeClass("active")
+                        $(".button").removeClass("success")
+                    }, 6000);
+                });
+            });
+        </script>
+    </body>
+</html>
