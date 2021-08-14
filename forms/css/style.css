@@ -39,7 +39,8 @@ a {
     font-family: var(--secondary-font);
 }
 
-.page-header {
+path {fill:#333;
+      fill-opacity: 1;
         
     }
 
@@ -70,8 +71,8 @@ a {
     padding:0 1%;    
 }
 
-.social-media img,
-.cart-and-account img {
+.social-media svg,
+.cart-and-account svg {
     width:100%;
     max-width:30px;
 }
